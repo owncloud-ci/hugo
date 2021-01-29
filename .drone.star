@@ -189,7 +189,7 @@ def dryrun(config):
     'image': 'plugins/docker',
     'settings': {
       'dry_run': True,
-      'tags': config['tag'],
+      'auto_tag': True,
       'dockerfile': '%s/Dockerfile.%s' % (config['path'], config['arch']),
       'repo': 'owncloudci/%s' % config['repo'],
       'context': config['path'],
@@ -212,7 +212,8 @@ def publish(config):
       'password': {
         'from_secret': 'public_password',
       },
-      'tags': config['tag'],
+      'auto_tag': True,
+      'auto_tag_suffix': config['arch'],
       'dockerfile': '%s/Dockerfile.%s' % (config['path'], config['arch']),
       'repo': 'owncloudci/%s' % config['repo'],
       'context': config['path'],

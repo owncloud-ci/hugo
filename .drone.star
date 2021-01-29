@@ -108,6 +108,7 @@ def manifest(config):
             'from_secret': 'public_password',
           },
           'spec': '%s/manifest.tmpl' % config['path'],
+          'auto_tag': 'true',
           'ignore_missing': 'true',
         },
       },

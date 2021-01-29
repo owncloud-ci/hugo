@@ -1,11 +1,15 @@
 FROM alpine:3.11
 
-LABEL maintainer="ownCloud GmbH <devops@owncloud.com>" \
-    org.label-schema.name="Hugo" \
-    org.label-schema.vendor="ownCloud GmbH" \
-    org.label-schema.schema-version="1.0"
+LABEL maintainer="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.authors="ownCloud DevOps <devops@owncloud.com>"
+LABEL org.opencontainers.image.title="ownCloud CI Hugo"
+LABEL org.opencontainers.image.url="https://github.com/owncloud-ci/hugo"
+LABEL org.opencontainers.image.source="https://github.com/owncloud-ci/hugo"
+LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/hugo"
 
-ARG BUILD_VERSION=0.69.2
+ARG BUILD_VERSION
+
+# renovate: datasource=github-releases depName=gohugoio/hugo
 ENV HUGO_VERSION="${BUILD_VERSION:-0.69.2}"
 
 RUN apk --update add --virtual .build-deps curl && \

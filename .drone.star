@@ -81,6 +81,7 @@ def docker(config):
     'trigger': {
       'ref': [
         'refs/heads/master',
+        'refs/tags/**',
         'refs/pull/**',
       ],
     },

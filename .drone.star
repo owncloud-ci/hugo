@@ -124,7 +124,7 @@ def manifest(config):
     }
 
 def release(ctx):
-    return [{
+    return {
         "kind": "pipeline",
         "type": "docker",
         "name": "release",
@@ -164,7 +164,7 @@ def release(ctx):
                 "refs/pull/**",
             ],
         },
-    }]
+    }
 
 def notification(config):
     steps = [{

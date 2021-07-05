@@ -10,7 +10,7 @@ LABEL org.opencontainers.image.documentation="https://github.com/owncloud-ci/hug
 ARG BUILD_VERSION
 
 # renovate: datasource=github-releases depName=gohugoio/hugo
-ENV HUGO_VERSION="${BUILD_VERSION:-v0.84.3}"
+ENV HUGO_VERSION="${BUILD_VERSION:-v0.85.0}"
 
 RUN apk --update add --virtual .build-deps curl && \
     HUGO_VERSION="${HUGO_VERSION##v}" && \
